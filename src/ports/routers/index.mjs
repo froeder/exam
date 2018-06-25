@@ -38,8 +38,8 @@ export default function getRouter() {
 
     const router = express.Router()
     router.post('/exams', (req, res, next) => createExam(req, res, next))
-    router.post('/exams/generateToken', (req, res, next) => generateToken(req, res, next))
-    router.get('/exams/mine/:pacientEmail', (req, res, next) => getMyExams(req, res, next))
+    router.post('/exams/generateToken/:patientEmail', (req, res, next) => generateToken(req, res, next))
+    router.get('/exams/mine/:patientEmail', (req, res, next) => getMyExams(req, res, next))
     router.get('/exams/authorized/:accessTokenKey', (req, res, next) => getAuthorizedExams(req, res, next))
 
     return router

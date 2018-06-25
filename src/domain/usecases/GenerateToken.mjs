@@ -8,8 +8,10 @@ export default class GenerateToken {
 
     async execute() {
         try {
-            const email = this.accessTokenController.getData()
+            const email = this.accessTokenController.getParam('patientEmail')
+            console.log(email)
             const accessTokenData = accessToken.generate(email)
+            console.log(accessTokenData)
             const createToken = await this.accessTokenRepository.save(accessTokenData)
             this.accessTokenController.sendSuccess(createToken)
         } catch (err) {

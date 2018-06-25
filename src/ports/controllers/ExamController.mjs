@@ -5,8 +5,8 @@ export default class ExamController {
         this.next = next
     }
 
-    getParams(){
-        this.req.params
+    getParam(paramName){
+        this.req.params[paramName]
     }
 
     getData() {

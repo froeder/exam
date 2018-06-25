@@ -5,8 +5,8 @@ export default class AccessTokenController {
         this.next = next
     }
 
-    getParams(){
-        this.req.params
+    getParam(paramName){
+        return this.req.params[paramName]
     }
 
     getData() {

@@ -1,9 +1,9 @@
 import moment from 'moment'
 
 class AccessToken {
-    generate(pacientEmail) {
+    generate(patientEmail) {
         return {
-            pacientEmail: pacientEmail,
+            patientEmail: patientEmail,
             key: this.getTokenKey(),
             createAt: this.getNow(),
             expirationAt: this.getExpiration()

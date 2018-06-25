@@ -6,8 +6,8 @@ class ExamRepository {
         return exam.save()
     }
 
-    async getExamByPacient(pacientEmail) {
-        return Exam.find({pacientEmail: pacientEmail})
+    async getExamByPatient(patientEmail) {
+        return Exam.find({patientEmail: patientEmail})
     }
 }
 
