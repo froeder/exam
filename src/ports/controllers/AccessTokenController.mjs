@@ -1,4 +1,4 @@
-export default class ExamController {
+export default class AccessTokenController {
     constructor(req, res, next) {
         this.req = req
         this.res = res
@@ -15,10 +15,6 @@ export default class ExamController {
 
     sendSuccess(createExam) {
         this.res.json(createExam)
-    }
-
-    sendNotFound() {
-        this.res.sendStatus(404)
     }
 
     sendError(err) {

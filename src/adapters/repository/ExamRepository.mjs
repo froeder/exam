@@ -5,6 +5,10 @@ class ExamRepository {
         const exam = new Exam(examData)
         return exam.save()
     }
+
+    async getExamByPacient(pacientEmail) {
+        return Exam.find({pacientEmail: pacientEmail})
+    }
 }
 
 export default new ExamRepository()
