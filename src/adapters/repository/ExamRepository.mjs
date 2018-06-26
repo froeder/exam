@@ -7,7 +7,7 @@ class ExamRepository {
     }
 
     async getExamByPatient(patientEmail) {
-        return Exam.find({patientEmail: patientEmail})
+        return Exam.find({patientEmail: patientEmail}).exec()
     }
 }
 

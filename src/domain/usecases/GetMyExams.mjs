@@ -6,8 +6,8 @@ export default class GetMyExams {
 
     async execute() {
         try {
-            const pacientEmail = this.examController.getParam('patientEmail')
-            const exams = await this.examRepository.getExamByPacient(pacientEmail)
+            const patientEmail = this.examController.getParam('patientEmail')
+            const exams = await this.examRepository.getExamByPatient(patientEmail)
             this.examController.sendSuccess(exams)
         } catch (err) {
             this.examController.sendError(err)

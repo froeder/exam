@@ -9,8 +9,8 @@ export default class GetAuthorizedExams {
         try {
             const key = this.examController.getParam('accessTokenKey')
             const accessToken = await this.accessTokenRepository.getByTokenKey(key)
-            if (accessToken) {
-                const exams = await this.examRepository.getExamByPatient(accessToken.patientEmail)
+            if (accessToken[0]) {
+                const exams = await this.examRepository.getExamByPatient(accessToken[0].patientEmail)
                 this.examController.sendSuccess(exams)
             }
             else {

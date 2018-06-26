@@ -7,7 +7,9 @@ class AccessTokenRepository {
     }
 
     async getByTokenKey(key) {
-        return AccessToken.find({key: key, expirationAt: {'$lte': new Date()}})
+        console.log(key)
+        return AccessToken.find({key: key}).exec()
+        //, expirationAt: {'$gte': new Date()}
     }
 }
 
