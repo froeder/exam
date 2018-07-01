@@ -1,4 +1,4 @@
-import {AccessToken} from '../model/AccessToken.mjs'
+import {AccessToken} from './AccessToken.mjs'
 
 class AccessTokenRepository {
     async save(data) {
@@ -7,9 +7,7 @@ class AccessTokenRepository {
     }
 
     async getByTokenKey(key) {
-        console.log(key)
         return AccessToken.find({key: key}).exec()
-        //, expirationAt: {'$gte': new Date()}
     }
 }
 

@@ -11,9 +11,9 @@ class AccessToken {
     }
 
     getTokenKey() {
-        const number_1 = Math.floor((Math.random() * 10) + 1)
-        const number_2 = Math.floor((Math.random() * 10) + 1)
-        const number_3 = Math.floor((Math.random() * 10) + 1)
+        const number1 = Math.floor((Math.random() * 10) + 1)
+        const number2 = Math.floor((Math.random() * 10) + 1)
+        const number3 = Math.floor((Math.random() * 10) + 1)
         let charsAcessToken = ''
         let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 
@@ -21,7 +21,7 @@ class AccessToken {
             charsAcessToken += possible.charAt(Math.floor(Math.random() * possible.length))
         }
 
-        return charsAcessToken + number_1 + number_2 + number_3
+        return charsAcessToken + number1 + number2 + number3
     }
 
     getNow() {
@@ -35,4 +35,3 @@ class AccessToken {
 
 const accessToken = new AccessToken()
 export default accessToken
-

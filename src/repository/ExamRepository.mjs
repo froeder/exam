@@ -1,4 +1,4 @@
-import {Exam} from '../model/Exam.mjs'
+import {Exam} from './Exam.mjs'
 
 class ExamRepository {
     async save(examData) {
