@@ -17,9 +17,9 @@ RUN npm install \
 
 ENV HOST=0.0.0.0 \
     NODE_ENV=production \
-    PORT=8084 \
+    PORT=8083 \
     URL=mongodb://localhost/exam
 
-EXPOSE 8084
+EXPOSE 8083
 
 CMD ["npm", "start"]
