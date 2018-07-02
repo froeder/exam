@@ -3,8 +3,13 @@ import environment from '../common/environment.mjs'
 
 class FileRepository {
     async getFile(filename) {
-        const {data} = await axios({url: `${environment.services.file}/${filename}`, method: 'GET', responseType: 'arraybuffer'})
-        return Buffer.alloc(data)
+        try {
+            const url = `${environment.services.file}/${filename}`
+            const response = await axios({url: url, method: 'GET'})
+            return Buffer.from(response.data)
+        } catch (err) {
+            throw err
+        }
     }
 }
 

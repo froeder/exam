@@ -5,16 +5,19 @@ import examRepository from 'src/repository/ExamRepository.mjs'
 export default class CreateExam {
     async execute(examData, responder) {
         try {
-            if (examData.file) {
-                const fileBuffer = await fileRepository.getFile(examData.file)
-                const content = await pdfReader.read(fileBuffer)
-                examData.content = content
-            }
+            // if (examData.file) {
+            //     examData.content = await this.getFileContent(examData.file)
+            // }
             examData.date = new Date()
             const savedExam = await examRepository.save(examData)
             responder.success(savedExam)
         } catch (err) {
             responder.error(err)
         }
+    }
+
+    async getFileContent(file) {
+        const fileBuffer = await fileRepository.getFile(file)
+        return pdfReader.read(fileBuffer)
     }
 }
